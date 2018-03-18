@@ -6,7 +6,7 @@
 
 metadata {
 	// Automatically generated. Make future change here.
-	definition (name: "Concord4", author: "scdozier", namespace: "scdozier") {
+	definition (name: "Concord4", author: "scdozier", namespace: "lehighkid") {
         capability "Polling"
         capability "Lock"
         capability "Refresh"
