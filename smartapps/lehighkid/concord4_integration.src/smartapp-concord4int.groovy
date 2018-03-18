@@ -29,9 +29,12 @@ preferences {
         input "zone8", "capability.contactSensor", title:"Zone 8"
         input "zone9", "capability.contactSensor", title:"Zone 9"
         input "zone10", "capability.contactSensor", title:"Zone 10"
+        input "zone11", "capability.contactSensor", title:"Zone 11"
+        input "zone12", "capability.contactSensor", title:"Zone 12"
         input "zone13", "capability.contactSensor", title:"Zone 13"
         input "zone14", "capability.contactSensor", title:"Zone 14"
         input "zone15", "capability.contactSensor", title:"Zone 15"
+        input "zone16", "capability.contactSensor", title:"Zone 16"
 	}
     section("Presence Options") {
         input "autoArmDoorLock", "capability.lock", title: "Arm when door locked and all away and disarm on return with code?", required: false
@@ -244,6 +247,12 @@ def zoneOpen(evt)
         case "zone10":
         zone10.open( getZoneName(evt.name) )
         break;    
+        case "zone11":
+        zone11.open( getZoneName(evt.name) )
+        break;    
+        case "zone12":
+        zone12.open( getZoneName(evt.name) )
+        break;    
         case "zone13":
         zone13.open( getZoneName(evt.name) )
         break;
@@ -252,7 +261,10 @@ def zoneOpen(evt)
         break;        
         case "zone15":
         zone15.open( getZoneName(evt.name) )
-        break;  
+        break; 
+        case "zone16":
+        zone16.open( getZoneName(evt.name) )
+        break;     
     }
 
     // If the alarm is armed, send a notification if required.
@@ -304,6 +316,12 @@ def zoneClose(evt)
         case "zone10":
         zone10.closed( getZoneName(evt.name) )
         break;
+        case "zone11":
+        zone11.closed( getZoneName(evt.name) )
+        break;
+        case "zone12":
+        zone12.closed( getZoneName(evt.name) )
+        break;
         case "zone13":
         zone13.closed( getZoneName(evt.name) )
         break;
@@ -313,6 +331,9 @@ def zoneClose(evt)
         case "zone15":
         zone15.closed( getZoneName(evt.name) )
         break;  
+        case "zone16":
+        zone16.closed( getZoneName(evt.name) )
+        break;
     }
 
     // If the alarm is armed, send a notification if required.
@@ -332,43 +353,52 @@ def zoneClose(evt)
 def getZoneName(name) {
     switch (name) {
         case "zone1":
-        return "Zone 1"
+        return "Front Door"
         break;
         case "zone2":
-        return "Zone 2"
+        return "Garage Door"
         break;
         case "zone3":
-        return "Zone 3"
+        return "Back Door"
         break;
         case "zone4":
-        return "Zone 4"
+        return "Basement Door"
         break;
         case "zone5":
-        return "Zone 5"
+        return "Living Room Motion"
         break;
         case "zone6":
-        return "Zone 6"
+        return "Basement Motion"
         break;        
         case "zone7":
-        return "Zone 7"
+        return "C02 Detector"
         break;
         case "zone8":
-        return "Zone 8"
+        return "Smoke Detector"
         break;
         case "zone9":
-        return "Zone 9"
+        return "Kitchen Window (L)"
         break;
         case "zone10":
-        return "Zone 10"
+        return "Kitchen Window (R)"
+        break;
+        case "zone11":
+        return "Basement Window (L)"
+        break;
+        case "zone12":
+        return "Basement Window (R)"
         break;
         case "zone13":
-        return "Zone 13"
+        return "Basement Den Window"
         break;
         case "zone14":
-        return "Zone 14"
+        return "Basement Bedroom Window (L)"
         break;
         case "zone15":
-        return "Zone 15"
+        return "Basement Bedroom Window (R)"
+        break;
+        case "zone16":
+        return "Basement Smoke Detector"
         break;
     }
 
