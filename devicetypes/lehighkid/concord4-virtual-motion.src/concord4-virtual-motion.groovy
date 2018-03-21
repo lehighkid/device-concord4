@@ -15,7 +15,7 @@
  */
 
 metadata {
-	definition (name: "Concord4 Virtual Motion Detector", namespace: "lehighkid", author: "scdozier") {
+	definition (name: "Concord4 Virtual Motion", namespace: "lehighkid", author: "scdozier") {
     capability "Contact Sensor"
     capability "Motion Sensor"
     command "open"

@@ -5,7 +5,7 @@
  *  Author: Scott Dozier
  */
 definition(
-    name: "Concord 4 Integration",
+    name: "Concord4 Integration",
     namespace: "lehighkid",
     author: "scdozier",
     description: "Handles the REST callback from concord and set virtual devices",
